@@ -18,12 +18,10 @@ public class PostView {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Many views belong to one post
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id", nullable = false)
     private Post post;
 
-    // Many views can be associated with one user
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
