@@ -10,7 +10,6 @@ import java.util.Optional;
 @Service
 public class TagService {
     private final TagDao tagDao;
-
     public TagService(TagDao tagDao) {
         this.tagDao = tagDao;
     }
