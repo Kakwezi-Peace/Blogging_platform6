@@ -66,7 +66,6 @@ public class CommentController {
         return ResponseEntity.ok(ApiResponse.success("Comment deleted successfully"));
     }
 
-    // Helper method for DTO conversion
     private CommentDto convertToDto(Comment comment) {
         CommentDto dto = new CommentDto();
         dto.setId(comment.getId());
