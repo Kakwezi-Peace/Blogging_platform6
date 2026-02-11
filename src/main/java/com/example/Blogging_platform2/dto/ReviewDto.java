@@ -1,5 +1,4 @@
 package com.example.Blogging_platform2.dto;
-
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
