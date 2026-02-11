@@ -19,18 +19,16 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Many reviews belong to one post
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id", nullable = false)
     private Post post;
 
-    // Many reviews belong to one user
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @Column(nullable = false)
-    private Integer rating;   // e.g., 1–5 stars
+    private Integer rating;
 
     @Column(columnDefinition = "TEXT")
     private String comment;
