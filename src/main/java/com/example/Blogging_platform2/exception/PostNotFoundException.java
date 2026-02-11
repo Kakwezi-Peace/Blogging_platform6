@@ -1,5 +1,4 @@
 package com.example.Blogging_platform2.exception;
-
 public class PostNotFoundException extends RuntimeException {
 
     public PostNotFoundException(Long id) {
