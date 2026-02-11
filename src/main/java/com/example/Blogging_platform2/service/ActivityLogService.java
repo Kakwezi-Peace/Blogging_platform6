@@ -10,7 +10,6 @@ import java.util.Optional;
 
 @Service
 public class ActivityLogService {
-
     private final ActivityLogDao activityLogDao;
 
     public ActivityLogService(ActivityLogDao activityLogDao) {
