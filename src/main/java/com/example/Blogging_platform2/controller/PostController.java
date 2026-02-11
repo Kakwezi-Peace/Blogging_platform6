@@ -47,8 +47,6 @@ public class PostController {
     }
 
 
-
-
     @PostMapping
     @Operation(summary = "Create a new post")
     public ResponseEntity<ApiResponse<PostDto>> createPost(@Valid @RequestBody PostDto postDto) {
