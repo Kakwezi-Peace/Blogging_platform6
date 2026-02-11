@@ -31,7 +31,6 @@ public class ReviewController {
     public ResponseEntity<ApiResponse<ReviewDto>> createReview(@Valid @RequestBody ReviewDto dto) {
         Review review = new Review();
 
-        // JPA expects entity references instead of raw IDs
         Post post = new Post();
         post.setId(dto.getPostId());
         review.setPost(post);
