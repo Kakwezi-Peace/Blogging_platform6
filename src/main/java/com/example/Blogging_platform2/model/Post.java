@@ -36,23 +36,20 @@ public class Post {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    // One post can have many comments
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments;
 
-    // Many posts belong to one user
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
-    // Many posts can have many tags
     @ManyToMany
     @JoinTable(
             name = "post_tags",
             joinColumns = @JoinColumn(name = "post_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id")
     )
-    private List<Tag> tags;   // switched to List for ordering
+    private List<Tag> tags;
 
     public Post orElseThrow(Object o) {
         return null;
