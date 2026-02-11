@@ -10,7 +10,6 @@ import java.util.Optional;
 @Repository
 public interface CommentDao extends JpaRepository<Comment, Long> {
 
-    // Find all comments for a given post
     List<Comment> findAllByPostId(Long postId);
 
 
