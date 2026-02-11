@@ -10,7 +10,6 @@ import java.util.Optional;
 @Repository
 public interface ReviewDao extends JpaRepository<Review, Long> {
 
-    // Find all reviews for a given post
     List<Review> findAllByPostId(Long postId);
 
 
