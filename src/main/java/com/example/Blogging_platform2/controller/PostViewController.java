@@ -31,7 +31,6 @@ public class PostViewController {
     public ResponseEntity<ApiResponse<PostViewDto>> createView(@Valid @RequestBody PostViewDto dto) {
         PostView view = new PostView();
 
-        // JPA expects entity references instead of raw IDs
         Post post = new Post();
         post.setId(dto.getPostId());
         view.setPost(post);
@@ -80,7 +79,6 @@ public class PostViewController {
         return ResponseEntity.ok(ApiResponse.success("View deleted successfully"));
     }
 
-    // Helper method for DTO conversion
     private PostViewDto convertToDto(PostView view) {
         PostViewDto dto = new PostViewDto();
         dto.setId(view.getId());
