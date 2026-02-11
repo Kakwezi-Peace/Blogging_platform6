@@ -11,9 +11,7 @@ import java.util.Optional;
 @Repository
 public interface PostDao extends JpaRepository<Post, Long> {
 
-    // Find posts by user ID
     Page<Post> findByUserId(Long userId, Pageable pageable);
 
-    // Search posts by title keyword
     Page<Post> findByTitleContainingIgnoreCase(String keyword, Pageable pageable);
 }
