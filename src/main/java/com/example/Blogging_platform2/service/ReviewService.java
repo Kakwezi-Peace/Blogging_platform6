@@ -10,7 +10,6 @@ import java.util.List;
 @Service
 public class ReviewService {
     private final ReviewDao reviewDao;
-
     public ReviewService(ReviewDao reviewDao) {
         this.reviewDao = reviewDao;
     }
