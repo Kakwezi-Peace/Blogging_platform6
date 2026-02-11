@@ -10,7 +10,6 @@ import java.util.Optional;
 @Repository
 public interface PostViewDao extends JpaRepository<PostView, Long> {
 
-    // Find all views for a given post
     List<PostView> findByPostId(Long postId);
 
 
