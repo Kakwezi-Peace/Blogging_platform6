@@ -20,7 +20,6 @@ public class CommentService {
 
     private final UserDao userDao;
     private final PostDao postDao;
-
     public CommentService(CommentDao commentDao, UserDao userDao, PostDao postDao) {
         this.commentDao = commentDao;
         this.userDao = userDao;
