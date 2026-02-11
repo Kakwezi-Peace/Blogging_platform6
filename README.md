@@ -22,52 +22,11 @@ Spring Boot
 
 Spring GraphQL
 
-PostgreSQL (or any JDBC-compatible database)
+PostgresSQL (jpa-hibernate)
 
 Maven for dependency management
 
 Swagger/OpenAPI for API documentation
-
-### Project Structure
-
-Blogging_platform2/
-├── src/
-│   └── main/
-│       ├── java/
-│       │   └── com/
-│       │       └── example/
-│       │           └── Blogging_platform2/
-│       │               ├── aspect/
-│       │               ├── config/
-
-│       │               │
-
-│       │               │ 
-
-│       │               │  
-│       │               │
-│       │               ├── controller/
-│       │               ├── graphqlcontroller/
-│       │               ├── dto/
-│       │               ├── exception/
-│       │               ├── model/
-│       │               ├── repository/
-│       │               ├── service/
-│       │               ├── util/
-│       │               ├── validation/
-│       │               └── BloggingPlatform2Application.java
-│       └── resources/
-│           ├── graphql/
-│           ├── static/
-│           ├── templates/
-│           ├── application.properties
-│           ├── application-dev.properties
-│           ├── application-prod.properties
-│           ├── application-test.properties
-│           └── schema.sql
-├── pom.xml
-└── README.md
-
 
 ## Key Features
 Posts: CRUD operations with ownership checks
