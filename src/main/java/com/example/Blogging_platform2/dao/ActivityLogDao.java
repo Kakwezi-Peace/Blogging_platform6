@@ -10,10 +10,8 @@ import java.util.Optional;
 @Repository
 public interface ActivityLogDao extends JpaRepository<ActivityLog, Long> {
 
-    // Find all logs for a given user
     List<ActivityLog> findByUserId(Long userId);
 
-    // Find all logs for a given action
     List<ActivityLog> findByAction(String action);
 
 
