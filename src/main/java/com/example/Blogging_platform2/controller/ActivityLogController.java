@@ -67,6 +67,7 @@ public class ActivityLogController {
         return ResponseEntity.ok(ApiResponse.success("Log retrieved successfully", convertToDto(log)));
     }
 
+
     @DeleteMapping("/{id}")
     @Operation(summary = "Delete activity log by ID")
     public ResponseEntity<ApiResponse<Void>> deleteLog(@PathVariable Long id) {
