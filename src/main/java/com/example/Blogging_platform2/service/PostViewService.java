@@ -35,7 +35,6 @@ public class PostViewService {
         }
         postViewDao.deleteById(id);
     }
-
     public PostView createView(PostView view) {
         return postViewDao.save(view);
     }
