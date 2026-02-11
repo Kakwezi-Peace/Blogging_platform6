@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/tags")
-// Fully qualify Swagger's Tag annotation to avoid conflict with your entity
+
 @io.swagger.v3.oas.annotations.tags.Tag(name = "Tag Management", description = "APIs for managing tags")
 @RequiredArgsConstructor
 public class TagController {
@@ -68,7 +68,6 @@ public class TagController {
         return ResponseEntity.ok(ApiResponse.success("Tag deleted successfully"));
     }
 
-    // Helper method for DTO conversion
     private TagDto convertToDto(Tag tag) {
         TagDto dto = new TagDto();
         dto.setId(tag.getId());
