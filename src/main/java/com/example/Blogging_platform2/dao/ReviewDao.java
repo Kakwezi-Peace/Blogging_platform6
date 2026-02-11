@@ -1,0 +1,17 @@
+package com.example.Blogging_platform2.dao;
+
+import com.example.Blogging_platform2.model.Review;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface ReviewDao extends JpaRepository<Review, Long> {
+
+    // Find all reviews for a given post
+    List<Review> findAllByPostId(Long postId);
+
+
+}
