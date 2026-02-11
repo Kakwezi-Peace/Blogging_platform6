@@ -29,7 +29,6 @@ public class PostService {
                 .orElseThrow(() -> new PostNotFoundException("Post with ID " + id + " not found"));
     }
 
-
     public Page<Post> getPostsByUser(Long userId, Pageable pageable) {
         return postDao.findByUserId(userId, pageable);
     }
