@@ -9,6 +9,5 @@ import java.util.Optional;
 @Repository
 public interface TagDao extends JpaRepository<Tag, Long> {
 
-    // Derived query methods
     Optional<Tag> findByName(String name);
 }
