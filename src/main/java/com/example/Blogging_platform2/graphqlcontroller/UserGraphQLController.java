@@ -21,7 +21,6 @@ public class UserGraphQLController {
     public List<User> getAllUsers() {
         return service.findAll();
     }
-
     @QueryMapping
     public User getUser(@Argument Long id) {
         return service.findById(id)
