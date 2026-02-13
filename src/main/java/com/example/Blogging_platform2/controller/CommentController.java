@@ -14,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/comments")
@@ -22,12 +21,13 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class CommentController {
 
-    private final CommentService service;
+
+    private final CommentService commentService;
 
     @PostMapping
     @Operation(summary = "Create a new comment")
     public ResponseEntity<ApiResponse<CommentDto>> createComment(@Valid @RequestBody CommentDto dto) {
-        Comment created = service.saveComment(dto);
+        Comment created = commentService.saveComment(dto);
         CommentDto responseDto = convertToDto(created);
 
         return new ResponseEntity<>(
@@ -36,20 +36,23 @@ public class CommentController {
         );
     }
 
-    @GetMapping("/post/{postId}")
-    @Operation(summary = "Get all comments for a post")
+    @GetMapping("/posts/{postId}/comments")
     public ResponseEntity<ApiResponse<List<CommentDto>>> getCommentsByPost(@PathVariable Long postId) {
-        List<CommentDto> comments = service.getCommentsByPost(postId).stream()
+        List<Comment> comments = commentService.getCommentsByPost(postId);
+        List<CommentDto> dtos = comments.stream()
                 .map(this::convertToDto)
-                .collect(Collectors.toList());
+                .toList();
 
-        return ResponseEntity.ok(ApiResponse.success("Retrieved " + comments.size() + " comments", comments));
+        return ResponseEntity.ok(
+                ApiResponse.success("Retrieved " + dtos.size() + " comments", dtos)
+        );
     }
+
 
     @GetMapping("/{id}")
     @Operation(summary = "Get comment by ID")
     public ResponseEntity<ApiResponse<CommentDto>> getComment(@PathVariable Long id) {
-        Comment comment = service.getCommentById(id);
+        Comment comment = commentService.getCommentById(id);
         if (comment == null) {
             throw new CommentNotFoundException("Comment with ID " + id + " not found");
         }
@@ -59,10 +62,10 @@ public class CommentController {
     @DeleteMapping("/{id}")
     @Operation(summary = "Delete comment by ID")
     public ResponseEntity<ApiResponse<Void>> deleteComment(@PathVariable Long id) {
-        if (service.getCommentById(id) == null) {
+        if (commentService.getCommentById(id) == null) {
             throw new CommentNotFoundException("Comment with ID " + id + " not found");
         }
-        service.deleteComment(id);
+        commentService.deleteComment(id);
         return ResponseEntity.ok(ApiResponse.success("Comment deleted successfully"));
     }
 
