@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e919a7b6-7c1a-4674-8696-7fc9c1e9126d" name="Changes" comment="" />
+    <list default="true" id="e919a7b6-7c1a-4674-8696-7fc9c1e9126d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/config/cacheConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/controller/CacheStatsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/BloggingPlatform2Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/BloggingPlatform2Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/controller/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/controller/ReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/controller/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/controller/TagController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/dao/CommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/dao/CommentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/dao/PostViewDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/dao/PostViewDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/dao/ReviewDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/dao/ReviewDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/graphqlcontroller/ReviewGraphQLController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/graphqlcontroller/ReviewGraphQLController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/service/ActivityLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/service/ActivityLogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/service/PostViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/service/PostViewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/service/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/service/ReviewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/service/TagService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/service/TagService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Blogging_platform2/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,14 +35,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -30,18 +51,21 @@
     &quot;assignee&quot;: &quot;Kakwezi-Peace&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Kakwezi-Peace/Blogging_platform2.git&quot;,
-    &quot;accountId&quot;: &quot;52faff31-4080-4cff-bb2c-e91767a282ba&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Kakwezi-Peace/Blogging_platform6.git",
+    "accountId": "52faff31-4080-4cff-bb2c-e91767a282ba"
   }
-}</component>
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -68,6 +92,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.Blogging_platform2.config" />
       <recent name="com.example.Blogging_platform2.model" />
       <recent name="com.example.Blogging_platform2.controller" />
     </key>

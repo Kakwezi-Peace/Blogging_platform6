@@ -9,6 +9,7 @@ import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
+
 import java.util.List;
 
 @Controller
@@ -24,7 +25,8 @@ public class ReviewGraphQLController {
 
     @QueryMapping
     public Review getReview(@Argument Long reviewId) {
-        return service.getReviewById(reviewId);
+        return service.getReviewById(reviewId)
+                .orElseThrow(() -> new RuntimeException("Review with ID " + reviewId + " not found"));
     }
 
     @MutationMapping
@@ -45,11 +47,14 @@ public class ReviewGraphQLController {
         review.setRating(rating);
         review.setComment(comment);
 
-        return service.createReview(review);
+        return service.saveReview(review);
     }
+
+
 
     @MutationMapping
     public Boolean deleteReview(@Argument Long reviewId) {
-        return service.deleteReview(reviewId);
+        service.deleteReview(reviewId);
+        return true;
     }
 }
