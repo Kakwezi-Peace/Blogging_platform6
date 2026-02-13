@@ -9,8 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface CommentDao extends JpaRepository<Comment, Long> {
-
     List<Comment> findAllByPostId(Long postId);
-
-
 }
+
