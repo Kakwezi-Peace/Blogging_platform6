@@ -16,7 +16,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/reviews")
@@ -24,7 +23,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ReviewController {
 
-    private final ReviewService service;
+    private final ReviewService reviewService;
 
     @PostMapping
     @Operation(summary = "Create a new review")
@@ -42,7 +41,7 @@ public class ReviewController {
         review.setRating(dto.getRating());
         review.setComment(dto.getComment());
 
-        Review created = service.saveReview(review);
+        Review created = reviewService.saveReview(review);
         ReviewDto responseDto = convertToDto(created);
 
         return new ResponseEntity<>(
@@ -51,32 +50,33 @@ public class ReviewController {
         );
     }
 
-    @GetMapping("/post/{postId}")
-    @Operation(summary = "Get all reviews for a post")
+    @GetMapping("/posts/{postId}/reviews")
     public ResponseEntity<ApiResponse<List<ReviewDto>>> getReviewsByPost(@PathVariable Long postId) {
-        List<ReviewDto> reviews = service.getReviewsByPost(postId).stream()
+        List<Review> reviews = reviewService.getReviewsByPost(postId);
+        List<ReviewDto> dtos = reviews.stream()
                 .map(this::convertToDto)
-                .collect(Collectors.toList());
+                .toList();
 
-        return ResponseEntity.ok(ApiResponse.success("Retrieved " + reviews.size() + " reviews", reviews));
+        return ResponseEntity.ok(
+                ApiResponse.success("Retrieved " + dtos.size() + " reviews", dtos)
+        );
     }
+
 
     @GetMapping("/{id}")
     @Operation(summary = "Get review by ID")
     public ResponseEntity<ApiResponse<ReviewDto>> getReview(@PathVariable Long id) {
-        Review review = service.getReviewById(id);
+        Review review = reviewService.getReviewById(id)
+                .orElseThrow(() -> new ReviewNotFoundException("Review with ID " + id + " not found"));
         return ResponseEntity.ok(ApiResponse.success("Review retrieved successfully", convertToDto(review)));
     }
-
-
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Delete review by ID")
     public ResponseEntity<ApiResponse<Void>> deleteReview(@PathVariable Long id) {
-        service.deleteReview(id);
+        reviewService.deleteReview(id);
         return ResponseEntity.ok(ApiResponse.success("Review deleted successfully"));
     }
-
 
     // Helper method for DTO conversion
     private ReviewDto convertToDto(Review review) {
@@ -95,11 +95,9 @@ public class ReviewController {
         dto.setComment(review.getComment());
 
         if (review.getCreatedAt() != null) {
-            dto.setCreatedAt(review.getCreatedAt().toString()); // or use formatter
+            dto.setCreatedAt(review.getCreatedAt().toString());
         }
 
         return dto;
     }
-
-
 }
